@@ -1,1 +1,132 @@
+O projeto guiado proposto pela plataforma dataquest.io é a consolidação do curso Introduction to Algorithms. De execução simples, ele propõe comparações entre formas diferentes de se arquitetar um código, contando com análise de desempenho desses códigos. Segundo a própria plataforma, os objetivos são aprender:
+- How to analyze the time and space complexity of an algorithm.
+- How preprocessing the data can significantly speed-up an algorithm.
+- How to sort data and efficiently search sorted data.
+- Some efficient algorithms such as finding pairs of equal values in a list and finding two values whose sum is a given value.
 
+O dataset em que se baseia o projeto é um conjunto de dados é de uma loja de laptops e contém informações como: Id, Company, Product, TypeName, Inches, ScreenResolution, Cpu, Ram. 
+
+Para o processamento, criou-se uma classe, Inventory, em que era posível instanciar laptops e trabalhar com suas características. Essa classe tinha alguns principais métodos, criados dois-a-dois (a segunda versão sendo sempre a otimizada). 
+
+É possível analisar o desempenho desses métodos:
+
+- get_laptop_from_id:
+O(n), em que n é o número de laptops anexados: nesse caso, a função percorre a lista de laptops para encontrar o laptop com o ID correspondente. No pior caso, ela pode ter que percorrer toda a lista.
+
+1. Big O (O):
+A função itera sobre todas as linhas na lista de laptops (self.rows) para encontrar o laptop com o ID desejado. A complexidade de tempo é linear em relação ao número de laptops na lista, ou seja, O(n), onde n é o número total de laptops.
+
+2. Big Theta (Θ):
+A complexidade de tempo Θ(n) é precisa para essa função, pois ela sempre precisa percorrer todas as linhas para encontrar o laptop ou determinar que ele não está presente.
+
+3. Big Omega (Ω):
+A complexidade de tempo Ω(1) é uma cota inferior para a função get_laptop_from_id. No melhor caso, o laptop desejado está na primeira posição da lista, e a função retorna imediatamente.
+
+- get_laptop_id_fast:
+O(1): essa função usa um dicionário self.id_to_row para verificar a existência de um laptop com o ID fornecido. A operação de busca em um dicionário tem complexidade média O(1). Versão otimizada de get_laptop_from_id.
+
+1. Big O (O):
+A função verifica se o ID do laptop está presente no dicionário self.id_to_row. Verificar a presença de uma chave em um dicionário é uma operação de tempo médio constante, ou seja, O(1). Portanto, a complexidade de tempo dessa função é dominada pela busca no dicionário, que é O(1).
+
+2. Big Theta (Θ):
+A complexidade de tempo Θ(1) é precisa para a função get_laptop_if_fast, pois ela sempre executa uma única verificação de presença no dicionário, independentemente do tamanho do dicionário.
+
+3. Big Omega (Ω):
+A complexidade de tempo Ω(1) também é uma cota inferior precisa para a função get_laptop_if_fast, pois, no pior caso, a função precisará de apenas uma verificação no dicionário.
+
+- check_promotion_dollars:
+O(n^2), em que n é o número de laptops anexados: a função verifica se existe um laptop com o preço especificado ou se a soma de dois preços resulta no valor especificado. Para isso, utiliza dois loops aninhados, o que leva a uma complexidade quadrática.
+
+1. Big O (O):
+A função realiza duas iterações aninhadas sobre a lista de laptops, onde a primeira iteração tem uma complexidade de O(k), e a segunda iteração também tem uma complexidade de O(k).
+Portanto, a complexidade de tempo total é O(k^2), onde k é o número de laptops.
+
+2. Big Theta (Θ):
+A complexidade de tempo Θ(k^2) é uma descrição precisa da complexidade, pois a função sempre precisa verificar todas as combinações possíveis de preços.
+
+3. Big Omega (Ω):
+A função sempre precisa verificar todas as combinações possíveis de preços, o que implica que a complexidade de tempo Ω(k^2) é uma cota inferior precisa para a função.
+
+- check_promotion_dollars_fast:
+O(n), em que n é o número de laptops na lista: essa função primeiro verifica se o preço especificado está presente no conjunto self.prices. Se não estiver, ele realiza um loop sobre os preços para verificar se a diferença entre o preço especificado e um preço na lista está presente no conjunto. O pior caso é O(n), pois ele pode ter que verificar todos os preços. Versão otimizada de check_promotion_dollars.
+
+1. Big O (O):
+A função realiza uma iteração sobre o conjunto self.prices (O(k)) e, para cada preço, realiza uma verificação se dollars - price está presente no conjunto (O(1) em média). Portanto, a complexidade de tempo total é O(k), onde k é o número de preços únicos.
+
+2. Big Theta (Θ):
+A complexidade de tempo Θ(k) é uma descrição precisa da complexidade, pois a função percorre todos os preços únicos uma vez.
+
+3. Big Omega (Ω):
+A complexidade de tempo Ω(k) é uma cota inferior precisa para a função, pois a função sempre precisa percorrer todos os preços únicos.
+
+- find_laptop_with_price:
+O(log n), em que n é o número de laptops anexados: essa função realiza uma pesquisa binária na lista ordenada self.rows_by_price, o que resulta em uma complexidade logarítmica em relação ao número de laptops.
+
+1. Big O (O):
+A função realiza uma iteração sobre o conjunto self.prices (O(k)) e, para cada preço, realiza uma verificação se dollars - price está presente no conjunto (O(1) em média). Portanto, a complexidade de tempo total é O(k), onde k é o número de preços únicos.
+
+2. Big Theta (Θ):
+A complexidade de tempo Θ(k) é uma descrição precisa da complexidade, pois a função percorre todos os preços únicos uma vez.
+
+3. Big Omega (Ω):
+A complexidade de tempo Ω(k) é uma cota inferior precisa para a função, pois a função sempre precisa percorrer todos os preços únicos.
+
+- find_first_laptop_more_expensive:
+O(log n), em que n é o número de laptops na lista: similar à função anterior, esta função também realiza uma pesquisa binária na lista ordenada self.rows_by_price, o que resulta em uma complexidade logarítmica com relação ao número de laptops.
+
+1. Big O (O):
+A função implementa uma busca binária na lista de laptops ordenados por preço, o que resulta em uma complexidade de O(log k), onde k é o número de laptops.
+
+2. Big Theta (Θ):
+A complexidade de tempo Θ(log k) é uma descrição precisa da complexidade, pois a função sempre divide a lista de laptops ao meio em cada iteração.
+
+3. Big Omega (Ω):
+A complexidade de tempo Ω(log k) é uma cota inferior precisa para a função, pois a busca binária é eficiente e sempre reduz pela metade o espaço de busca.
+
+- find_laptops_in_price_range:
+O(n), em que n é o número de laptops na lista: a função itera sobre a lista ordenada self.rows_by_price, verificando se cada laptop está dentro do intervalo de preços especificado. No pior caso, pode ter que verificar todos os laptops.
+
+1. Big O (O):
+A função implementa uma busca binária na lista de laptops ordenados por preço, o que resulta em uma complexidade de O(log k), onde k é o número de laptops.
+
+2. Big Theta (Θ):
+A complexidade de tempo Θ(log k) é uma descrição precisa da complexidade, pois a função sempre divide a lista de laptops ao meio em cada iteração.
+
+3. Big Omega (Ω):
+A complexidade de tempo Ω(log k) é uma cota inferior precisa para a função, pois a busca binária é eficiente e sempre reduz pela metade o espaço de busca.
+
+- find_laptops_in_price_range_fast:
+O(log n + k), onde n é o número de laptops na lista e k é o número de laptops dentro do intervalo de preços especificado: esta função primeiro utiliza find_first_laptop_more_expensive para encontrar o índice do primeiro laptop com preço maior ou igual a min_price, que é logarítmico. Em seguida, percorre a lista ordenada até encontrar laptops fora do intervalo, o que pode ser linear em relação ao número de laptops dentro do intervalo. Se k for muito menor que n, o desempenho costuma ser melhor que O(n).
+
+1. Big O (O):
+A função começa encontrando o índice do primeiro laptop com preço maior ou igual a min_price usando a função find_first_laptop_more_expensive. A complexidade dessa função é logarítmica em relação ao número de laptops, pois utiliza busca binária na lista ordenada, o que resulta em uma complexidade de O(log n), onde n é o número de laptops. Em seguida, a função percorre a lista ordenada de laptops até encontrar laptops fora da faixa de preço. A quantidade de laptops dentro da faixa de preço afeta a quantidade de iterações necessárias. Portanto, a parte do loop tem uma complexidade potencial de O(k), onde k é o número de laptops dentro da faixa de preço. Em resumo, a complexidade total da função depende de ambas as partes: O(log n) para encontrar o primeiro laptop e O(k) para percorrer os laptops dentro da faixa de preço. No pior caso, a complexidade é O(log n + k).
+
+2. Big Theta (Θ):
+A complexidade de tempo Θ(log n + k) é uma descrição precisa da complexidade, pois leva em consideração tanto a busca binária quanto o número de laptops dentro da faixa de preço.
+
+3. Big Omega (Ω):
+A complexidade de tempo Ω(log n + k) é uma cota inferior precisa para a função, pois a função sempre precisa encontrar o primeiro laptop com preço maior ou igual a min_price e percorrer os laptops dentro da faixa de preço.
+
+
+- is_laptop_match:
+1. Big O (O):
+A função realiza operações lineares para encontrar correspondências para a quantidade de RAM e a capacidade de armazenamento na descrição do laptop, resultando em O(n + m), onde n é o tamanho da string da descrição de RAM e m é o tamanho da string da descrição de armazenamento. A verificação das especificações de RAM e armazenamento é uma operação de tempo constante. Portanto, a complexidade de tempo total é O(n + m).
+
+2. Big Theta (Θ):
+A complexidade de tempo Θ(n + m) é uma descrição precisa da complexidade, pois a função sempre precisa encontrar correspondências para RAM e armazenamento, independentemente dos valores exatos.
+
+3. Big Omega (Ω):
+A função sempre precisa encontrar correspondências para RAM e armazenamento, o que implica que a complexidade de tempo Ω(n + m) é uma cota inferior precisa para a função.
+
+- find_cheapest_laptop_with_specifications:
+1. Big O (O):
+A função envolve duas etapas principais:
+Filtragem de laptops que atendem às especificações (O(k * (n + m)), onde k é o número de laptops, n é o tamanho da string da descrição de RAM e m é o tamanho da string da descrição de armazenamento).
+Encontrar o laptop mais barato entre os laptops filtrados (O(k)).
+Portanto, a complexidade de tempo total é O(k * (n + m)), onde k é o número de laptops, n é o tamanho da string da descrição de RAM e m é o tamanho da string da descrição de armazenamento.
+
+2. Big Theta (Θ):
+A complexidade de tempo Θ(k * (n + m)) é uma descrição precisa da complexidade, pois a função sempre precisa percorrer a lista de laptops e verificar as especificações de RAM e armazenamento.
+
+3. Big Omega (Ω):
+A função sempre precisa percorrer a lista de laptops e verificar as especificações de RAM e armazenamento, o que implica que a complexidade de tempo Ω(k * (n + m)) é uma cota inferior precisa para a função.
