@@ -60,8 +60,8 @@ Therefore, the total time complexity is O(k^2), where k is the number of laptops
 
 ### `is_laptop_match`
 - **Big O (O)**: The function performs linear operations to find matches for the amount of RAM and the storage capacity in the laptop description, resulting in O(n + m), where n is the length of the RAM description string and m is the length of the storage description string. Checking the RAM and storage specifications is a constant time operation. Therefore, the total time complexity is O(n + m).
-- Big Theta (Θ)**: The time complexity Θ(n + m) is an accurate description of the complexity, because the function always needs to find matches for RAM and storage, regardless of the exact values.
-- Big Omega (Ω)**: The function always needs to find matches for RAM and storage, which implies that the time complexity Ω(n + m) is a precise lower bound for the function.
+- **Big Theta (Θ)**: The time complexity Θ(n + m) is an accurate description of the complexity, because the function always needs to find matches for RAM and storage, regardless of the exact values.
+- **Big Omega (Ω)**: The function always needs to find matches for RAM and storage, which implies that the time complexity Ω(n + m) is a precise lower bound for the function.
 
 ### `find_cheapest_laptop_with_specifications`
 - **Big O (O)**: The function involves two main steps: filtering laptops that meet the specifications (O(k * (n + m)), where k is the number of laptops, n is the length of the RAM description string and m is the length of the storage description string); finding the cheapest laptop among the filtered laptops (O(k)).
