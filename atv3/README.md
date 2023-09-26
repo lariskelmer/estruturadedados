@@ -15,6 +15,7 @@ The dataset used in this project comes from a laptop store and includes informat
 
 To facilitate data processing, a class called `Inventory` was created. This class allows laptops to be instantiated and their characteristics to be manipulated. It has several methods, each with two versions: an initial version and an optimized version. The optimized versions aim to improve the performance of operations.
 
+## Time complexity analysis
 The following describes the time complexity of the main functions implemented:
 
 ### `get_laptop_from_id`
