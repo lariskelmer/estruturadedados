@@ -1,21 +1,21 @@
-# Projeto Guiado - Análise de Desempenho e Complexidade
+# Guided Project - Performance and Complexity Analysis
 
-Este projeto guiado foi desenvolvido com base no curso "Introduction to Algorithms" da plataforma dataquest.io. Ele se concentra na análise de desempenho e complexidade de algoritmos, bem como na comparação de diferentes abordagens de implementação. Os principais objetivos deste projeto incluem:
+This guided project was developed based on the "Introduction to Algorithms" course on the dataquest.io platform. It focuses on analyzing the performance and complexity of algorithms, as well as comparing different implementation approaches. The main objectives of this project include:
 
-- Compreender como analisar a complexidade de tempo e espaço de um algoritmo.
-- Aprender como a pré-processamento de dados pode acelerar significativamente um algoritmo.
-- Explorar técnicas de classificação de dados e busca eficiente em dados classificados.
-- Implementar algoritmos eficientes para tarefas específicas, como encontrar pares de valores iguais em uma lista e localizar dois valores cuja soma seja igual a um valor dado.
+- Understanding how to analyze the time and space complexity of an algorithm.
+- Learning how data pre-processing can significantly speed up an algorithm.
+- Exploring data classification techniques and efficient search on classified data.
+- Implement efficient algorithms for specific tasks, such as finding pairs of equal values in a list and locating two values whose sum is equal to a given value.
 
-## Conjunto de Dados
+## Data Set
 
-O conjunto de dados usado neste projeto é originário de uma loja de laptops e inclui informações como ID, Marca, Produto, Tipo, Tamanho (em polegadas), Resolução da Tela, CPU e RAM. Esses dados são usados ​​para ilustrar e analisar o desempenho dos algoritmos implementados.
+The dataset used in this project comes from a laptop store and includes information such as ID, Brand, Product, Type, Size (in inches), Screen Resolution, CPU and RAM. This data is used to illustrate and analyze the performance of the implemented algorithms.
 
-## Classe Inventory
+## Inventory class
 
-Para facilitar o processamento dos dados, foi criada uma classe chamada `Inventory`. Essa classe permite a instânciação de laptops e a manipulação de suas características. Ela possui diversos métodos, cada um deles com duas versões: uma versão inicial e outra otimizada. As versões otimizadas buscam melhorar o desempenho das operações.
+To facilitate data processing, a class called `Inventory` was created. This class allows laptops to be instantiated and their characteristics to be manipulated. It has several methods, each with two versions: an initial version and an optimized version. The optimized versions aim to improve the performance of operations.
 
-A seguir, descrevemos a complexidade de tempo das principais funções implementadas:
+The following describes the time complexity of the main functions implemented:
 
 ### `get_laptop_from_id`
 - **Big O (O)**: O(n), onde n é o número de laptops anexados. A função percorre a lista de laptops para encontrar o laptop com o ID correspondente. No pior caso, ela pode ter que percorrer toda a lista.
