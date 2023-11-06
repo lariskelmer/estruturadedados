@@ -30,7 +30,7 @@ A linha de regressão no gráfico aponta para uma correlação positiva entre o 
 
 A dispersão dos pontos indica que há uma variação considerável no grau médio dos vizinhos para um dado grau de nó. Ou seja, há uma parte considerável dos dados que não seguem o padrão da assortatividade mencionada. 
 
-Em resumo, a análise do gráfico sugere que a rede de e-mail da instituição de pesquisa exibe uma estrutura complexa, com padrões de conexão variados entre seus membros. 
+Dessa forma, a análise do gráfico sugere que a rede de e-mail da instituição de pesquisa tem vários padrões de conexão entre seus membros, apesar de ser diversificada. 
 
 ### soc-Epinions1
 
@@ -40,6 +40,9 @@ Este grafo descreve interações de avaliação de produtos em uma rede social e
 
 Com base no gráfico assortatividadeXgrau dos nós é possível afirmar que 
 
+Esse é um gráfico de dispersão com uma linha de regressão, mostrando a relação entre o grau de um nó e o grau de assortatividade do nó na rede social do site de avaliações de consumidores Epinions.com. A rede é formada por usuários que podem decidir se “confiam” uns nos outros. Essas relações geram, então, a Web de Confiança, que é combinada com as avaliações para determinar quais avaliações serão mostradas ao usuário.
+
+A linha de regressão no gráfico sugere uma correlação quase neutra entre o grau de um nó e a assortatividade desse nó. Ou seja, o coeficiente de assortatividade é quase neutro, indicando que não há uma tendência para que usuários com muitas conexões se conectem com usuários que têm muitas ou poucas conexões. Isso é uma característica de redes com assortatividade próxima de zero e sugere uma estrutura de rede complexa com padrões de conexão variados entre os usuários.
 
 ### Wiki-Vote
 
@@ -49,6 +52,9 @@ Este grafo é derivado das votações de administração na Wikipedia e pode ter
 
 Com base no gráfico assortatividadeXgrau dos nós é possível afirmar que 
 
+O gráfico representa a relação entre o grau de um nó e o grau de assortatividade desse nó. Nele, há uma tendência positiva no gráfico, o que sugere que os nós com mais conexões (usuários que votaram em muitos outros usuários ou receberam muitos votos) tendem a estar conectados a outros nós com muitas conexões. Isso é uma característica de redes com assortatividade positiva, onde nós de alto grau tendem a se conectar a outros nós de alto grau.
+
+Além disso, a dispersão dos pontos indica que há uma variação considerável no grau médio dos vizinhos para um dado grau de nó. Isso sugere que, embora haja uma tendência geral de assortatividade, também existem muitos nós que não seguem essa tendência.
 
 ### twitter_combined
 
@@ -58,6 +64,11 @@ Este grafo representa conexões entre usuários do Twitter e pode ter seus dados
 
 Com base no gráfico assortatividadeXgrau dos nós é possível afirmar que 
 
+Este é um gráfico de dispersão com uma linha de regressão, mostrando a relação entre o grau de um nó e o coeficiente de assortatividade do Twitter. A rede é formada por usuários que formam círculos (ou listas) e foi gerada a partir de dados públicos do Twitter.
+
+A linha de regressão no gráfico sugere uma correlação quase neutra entre o grau de um nó e o coeficiente de assortatividade. Isso indica que não há uma tendência nítida para usuários com muitas conexões se conectarem com usuários que têm muitas ou poucas conexões. Isso é uma característica de redes com assortatividade próxima de zero.
+
+A dispersão dos pontos indica que há uma variação considerável no coeficiente de assortatividade para um dado grau de nó. Isso sugere que não há uma tendência geral de assortatividade e que a estrutura da rede é complexa e os padrões de conexão variam muito entre os usuários.
 
 ### com-youtube
 
@@ -65,12 +76,18 @@ Este grafo modela conexões entre vídeos no YouTube e pode ter seus dados dispo
 
 [Dataset](https://snap.stanford.edu/data/com-Youtube.html)
 
-Com base no gráfico assortatividadeXgrau dos nós é possível afirmar que 
+Com base no gráfico assortatividadeXgrau dos nós é possível afirmar que:
+
+O gráfico é de dispersão com uma linha de regressão, mostrando a relação entre o grau de um nó e o coeficiente de assortatividade do YouTube. A rede é formada por usuários que formam amizades e podem criar grupos, nesses grupos outros usuários também podem se juntar. Cada componente conectado em um grupo é considerado uma comunidade distinta.
+
+A linha de regressão no gráfico sugere uma correlação quase neutra entre o grau de um nó e o coeficiente de assortatividade. Isso indica que não há uma tendência clara para usuários com muitas conexões se conectarem com usuários que têm muitas ou poucas conexões. Isso é uma característica de redes com assortatividade próxima de zero.
+
+A dispersão dos pontos indica que há uma variação considerável no coeficiente de assortatividade para um dado grau de nó. Isso sugere que, embora não haja uma tendência geral de assortatividade, a estrutura da rede é complexa e os padrões de conexão variam amplamente entre os usuários.
 
 
 ## Métricas de Grafos
 
-Aqui estão algumas métricas comuns usadas para analisar grafos:
+Aqui estão algumas métricas comuns usadas para analisar grafos e suas respectivas descrições:
 
 | Métrica              | Descrição                                         |
 |----------------------|---------------------------------------------------|
@@ -81,7 +98,7 @@ Aqui estão algumas métricas comuns usadas para analisar grafos:
 | Coeficiente de Clustering Médio | Mede a tendência de formação de agrupamentos no grafo |
 | Centralidade de Grau | Mede a importância dos nós com base em seu grau  |
 
-Essas métricas ajudam a entender e as características de um grafo e, com base nelas, criou-se a seguinte tabela:
+Essas métricas ajudam a entender e as características de um grafo e, com base nelas, criou-se a seguinte tabela para analisar os dados acima:
 
 ![Métricas](images/df.png)
 
