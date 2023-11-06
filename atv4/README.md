@@ -22,29 +22,35 @@ O grau de um nó em um grafo representa o número de arestas conectadas a ele. A
 
 Este grafo representa interações de e-mail na comunidade de pesquisa de uma universidade.
 
+[Dataset](https://snap.stanford.edu/data/email-Eu-core.html)
+
 ### soc-Epinions1
 
 ![soc-Epinions1](images/soc-Epinions1.png)
 
 Este grafo descreve interações de avaliação de produtos em uma rede social.
+[Dataset](https://snap.stanford.edu/data/soc-Epinions1.html)
 
 ### Wiki-Vote
 
 ![Wiki-Vote](images/Wiki-Vote.png)
 
 Este grafo é derivado das votações de administração na Wikipedia.
+[Dataset](https://snap.stanford.edu/data/wiki-Vote.html)
 
 ### twitter_combined
 
 ![twitter_combined](images/twitter_combined.png)
 
 Este grafo representa conexões entre usuários do Twitter.
+[Dataset](https://snap.stanford.edu/data/ego-Twitter.html)
 
 ### com-youtube
 
 ![com-youtube](images/com-youtube.png)
 
 Este grafo modela conexões entre vídeos no YouTube.
+[Dataset](https://snap.stanford.edu/data/com-Youtube.html)
 
 ## Métricas de Grafos
 
@@ -59,6 +65,8 @@ Aqui estão algumas métricas comuns usadas para analisar grafos:
 | Coeficiente de Clustering Médio | Mede a tendência de formação de agrupamentos no grafo |
 | Centralidade de Grau | Mede a importância dos nós com base em seu grau  |
 
-Estas métricas ajudam a entender a topologia e as características de um grafo.
+Essas métricas ajudam a entender e as características de um grafo e, com base nelas, criou-se a seguinte tabela:
 
-Este README.md fornece uma visão geral de grafos, assortatividade e grafos específicos, bem como uma tabela para incluir métricas de grafos. Você pode adicionar as métricas específicas de cada grafo na tabela conforme necessário.
+![Métricas](images/df.png)
+
+
