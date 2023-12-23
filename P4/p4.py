@@ -1,6 +1,17 @@
 import networkx as nx
 
-def dijkstra(graph, start):
+def dijkstra(graph:dict, start:str)->dict:
+    """
+        Executa o algoritmo de Dijkstra (ou das menos distâncias).
+
+        Args: 
+            graph[dict]: grafo a ter as distâncias calculadas no algoritmo.
+            start[str]: nó de início.
+        
+        Returns: 
+            distances[dict]: dicionário com os valores das distâncias de todos
+                os nós ao nó de início.
+    """
     distances = {vertex: float('infinity') for vertex in graph}
     distances[start] = 0
 
